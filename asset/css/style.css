@@ -551,6 +551,10 @@ a {
   display: flex;
   gap: 30px;
 }
+.blog .blog-item:hover {
+  border-color: transparent;
+  box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
+}
 .blog .blog-item {
   width: 33.33%;
   background: #fff;
@@ -563,7 +567,7 @@ a {
   border-radius: 16px 16px 0px 0px;
 }
 .blog .blog-item .info {
-  /* padding: 20px 20px 28px 0; */
+  padding: 20px 20px 28px 20px;
 }
 .blog-item .date {
   color: #5f5b53;
@@ -571,15 +575,42 @@ a {
   font-size: 14px;
   font-weight: 400;
   line-height: 26px; /* 185.714% */
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-bottom: 12px;
 }
-.blog-item .title a {
+.blog-item .date::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.blog-item .date::after {
+  width: 160px;
+  height: 1px;
+  content: "";
+  display: inline-block;
+  border-radius: 0.5px;
+  background: #e2dfda;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.blog .blog-item .title a {
   color: #171100;
   font-family: var(--font-desc);
   font-size: 16px;
-  font-style: normal;
   font-weight: 600;
   line-height: 28px; /* 175% */
   width: 330px;
+}
+.blog .blog-item .title {
+  margin-top: 12px;
 }
 .blog-item .btn {
   margin-top: 12px;
@@ -587,4 +618,21 @@ a {
 .blog-item .btn:hover {
   border-radius: 25px;
   background: var(--primary-color);
+}
+.blog .dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 38px;
+  gap: 6px;
+}
+.blog .dot.actions {
+  background: #ffb900;
+  cursor: default;
+}
+.blog .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5f5b53;
+  cursor: pointer;
 }
